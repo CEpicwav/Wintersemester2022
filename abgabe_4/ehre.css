@@ -1,0 +1,42 @@
+p {
+    background-color: rgb(163, 195, 241);
+    text-align: center;
+    font-size: 30px;
+    margin: 0 0 0px 0;
+    padding: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+    }
+
+
+    
+footer {
+
+    background-color: rgb(150, 177, 228);
+    text-align: center;
+    font-size: 15px;
+    margin: 0 0 0px 0;
+    padding: 30px;
+}
+
+header {
+
+    background-color: rgb(150, 177, 228);
+    text-align: center;
+    font-size: 40px;
+    margin: 0 0 0px 0;
+    padding: 30px;
+}
+
+.link {
+
+    font-size: 40px;
+    margin: 0 0 0px 0;
+    padding: 30px;
+}
+
+.centerIt {
+    display: flex;
+    background-color: rgb(163, 195, 241);
+    justify-content: space-between;
+}
