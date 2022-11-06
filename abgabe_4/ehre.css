@@ -1,42 +1,58 @@
-p {
-    background-color: rgb(163, 195, 241);
-    text-align: center;
-    font-size: 30px;
-    margin: 0 0 0px 0;
-    padding: 30px;
-    font-family: Arial, Helvetica, sans-serif;
-    
-    }
-
-
-    
-footer {
-
-    background-color: rgb(150, 177, 228);
-    text-align: center;
-    font-size: 15px;
-    margin: 0 0 0px 0;
-    padding: 30px;
-}
-
 header {
-
-    background-color: rgb(150, 177, 228);
-    text-align: center;
-    font-size: 40px;
-    margin: 0 0 0px 0;
-    padding: 30px;
+    background-image: url(DSC_0441.jpg);
+    height: 400px;
 }
 
-.link {
 
-    font-size: 40px;
-    margin: 0 0 0px 0;
-    padding: 30px;
+
+.container {
+    width: 800px;
+    margin: auto;
+    display: block;
 }
 
-.centerIt {
-    display: flex;
-    background-color: rgb(163, 195, 241);
-    justify-content: space-between;
+body {
+    font-family: verdana;
+    color: black;
+}
+
+#navi {
+    text-align: right;
+}
+
+#logo {
+    position: absolute;
+    top: 10px;
+    width: 300px;
+    height: 300px;
+}
+
+#navi li {
+    display: inline;
+}
+
+#navi a:link {
+    text-decoration: none;
+    color: grey;
+    font-size: 15pt;
+}
+
+#navi a:visited {
+    text-decoration: none;
+    color: grey;
+    font-size: 15pt;
+}
+
+#navi a:hover {
+    text-decoration: underline;
+    color: rgb(255, 255, 255);
+}
+
+footer {
+    background-color: #eaeaea;
+    font-size: 12pt;
+}
+
+table {
+    width: 100%;
 }
