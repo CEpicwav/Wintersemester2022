@@ -51,8 +51,22 @@ body {
 footer {
     background-color: #eaeaea;
     font-size: 12pt;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
 }
 
 table {
     width: 100%;
 }
+
+ .textarea {
+
+    font-size: 10;
+    color: rgb(0, 0, 0);
+    width: 800px;
+  
+    
+
+ }
