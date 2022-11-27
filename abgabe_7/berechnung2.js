@@ -6,7 +6,7 @@ var abgabe7;
         { name: "greece", bipList: { 2015: 0.2, 2021: 0.2 } },
         { name: "spain", bipList: { 2015: 1.2, 2021: 1.4 } },
     ];
-    let balken;
+    let balken = document.getElementById("innerBalken");
     // Zahlen in Bi. forEach= geht durch jedes einmal durch & speichert was angeguckt wurde in Land
     Laender.forEach(land => {
         console.log("\n\n" + "Der BIP von " + land.name + " war 2015: " + land.bipList[2015] + " BILLIONEN US DOLLAR gestiegen.");

@@ -17,7 +17,7 @@ namespace abgabe7 {
 
     ];
 
-    let balken: HTMLDivElement;
+    let balken = document.getElementById("innerBalken");
 
     // Zahlen in Bi. forEach= geht durch jedes einmal durch & speichert was angeguckt wurde in Land
     Laender.forEach(land => {
