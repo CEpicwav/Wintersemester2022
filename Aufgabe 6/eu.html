@@ -7,7 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Carbon Dioxide Emissions</title>
     <link rel="stylesheet" href="css/styles.css">
-    <script src="./berechnung2.js"></script>
+    <!-- defer macht, dass das Script nach der DomBuild aufgerufen wird-->
+    <script src="./berechnung2.js" defer></script>
 </head>
 
 <body>
@@ -129,12 +130,16 @@
     </nav>
 
     <img src="images/eu_stars.png" class="stars">
+    <div id="balken">
+        <div id="innerBalken"></div>
+    </div>
     <h1>
         Einwohnerzahl in der europäischen Union
     </h1>
 
     <main>
-        <section>
+        <!--<section>
+    
             <h2>65,48Mio</h2>
             <p>Gesamtzahl Einwohnerinnen und Einwohner in Frankreich in 2022</p>
         </section>
@@ -147,11 +152,18 @@
         <section>
             <h2>5,1%</h2>
             <p>Wachstumsrate seit 2008</p>
-        </section>
+        </section>-->
 
         <section>
+            <h2>Der BIP 2015</h2>
+            <p id="bip2015"></p>
+            <!--<p id="bip2021"></p>
             <h2>3,34Mio</h2>
-            <p>Wachstumsrate gesamt zwischen 2008 and 2022</p>
+            <p>Wachstumsrate gesamt zwischen 2008 and 2022</p>-->
+        </section>
+        <section>
+            <h2>Der BIP 2021</h2>
+            <p id="bip2021"></p>
         </section>
     </main>
 

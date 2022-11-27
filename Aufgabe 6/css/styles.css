@@ -42,3 +42,18 @@ footer p {
     font-size: 10px;
     opacity: 0.5;
 }
+
+#balken {
+    display: flex;
+    margin:0 auto;
+    height: 50px;
+    width: 200px;
+    background-color: black;
+}
+
+#innerBalken {
+    align-self: flex-start;
+    height: 50px;
+    width: 100px;
+    background-color: yellow;
+}
