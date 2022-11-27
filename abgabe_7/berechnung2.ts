@@ -17,6 +17,8 @@ namespace abgabe7 {
 
     ];
 
+    let balken: HTMLDivElement;
+
     // Zahlen in Bi. forEach= geht durch jedes einmal durch & speichert was angeguckt wurde in Land
     Laender.forEach(land => {
         console.log("\n\n" + "Der BIP von " + land.name + " war 2015: " + land.bipList[2015] + " BILLIONEN US DOLLAR gestiegen.");
@@ -25,7 +27,6 @@ namespace abgabe7 {
     });
 
     init();
-    let balken: HTMLDivElement;
 
     function init() {
         let hoverElements = document.getElementsByClassName("wrapper");
