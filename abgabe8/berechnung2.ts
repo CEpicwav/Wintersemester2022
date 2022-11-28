@@ -11,8 +11,6 @@ namespace abgabe8 {
         ["spain", { 2015: 1.2, 2021: 1.4 }],
     ]);
 
-    let balken: HTMLDivElement;
-
     // Zahlen in Bi. forEach= geht durch jedes einmal durch & speichert was angeguckt wurde in Land
     EU_Mitglieder.forEach((bip: BIP, land: string) => {
         console.log("\n\n" + "Der BIP von " + land + " war 2015: " + bip[2015] + " BILLIONEN US DOLLAR gestiegen.");

@@ -6,7 +6,6 @@ var abgabe8;
         ["greece", { 2015: 0.2, 2021: 0.2 }],
         ["spain", { 2015: 1.2, 2021: 1.4 }],
     ]);
-    let balken;
     // Zahlen in Bi. forEach= geht durch jedes einmal durch & speichert was angeguckt wurde in Land
     EU_Mitglieder.forEach((bip, land) => {
         console.log("\n\n" + "Der BIP von " + land + " war 2015: " + bip[2015] + " BILLIONEN US DOLLAR gestiegen.");
