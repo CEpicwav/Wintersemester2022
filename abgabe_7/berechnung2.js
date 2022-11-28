@@ -6,7 +6,6 @@ var abgabe7;
         { name: "greece", bipList: { 2015: 0.2, 2021: 0.2 } },
         { name: "spain", bipList: { 2015: 1.2, 2021: 1.4 } },
     ];
-    let balken;
     // Zahlen in Bi. forEach= geht durch jedes einmal durch & speichert was angeguckt wurde in Land
     Laender.forEach(land => {
         console.log("\n\n" + "Der BIP von " + land.name + " war 2015: " + land.bipList[2015] + " BILLIONEN US DOLLAR gestiegen.");
@@ -32,7 +31,7 @@ var abgabe7;
         let bip2021 = document.getElementById("bip2021");
         bip2015.innerHTML = _land.bipList[2015].toString();
         bip2021.innerHTML = _land.bipList[2021].toString();
-        balken = document.getElementById("innerBalken");
+        let balken = document.getElementById("innerBalken");
         balken.style.width = (100 + (_land.bipList[2021] - _land.bipList[2015]) * 100).toString() + "px";
     }
 })(abgabe7 || (abgabe7 = {}));
