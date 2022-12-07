@@ -15,7 +15,7 @@ namespace abgabe8 {
     EU_Mitglieder.forEach((bip: BIP, land: string) => {
         console.log("\n\n" + "Der BIP von " + land + " war 2015: " + bip[2015] + " BILLIONEN US DOLLAR gestiegen.");
         console.log("Der BIP von " + land + " war 2021: " + bip[2021] + " BILLIONEN US DOLLAR gestiegen.");
-        console.log("Der BIP von Spanien ist seit 2015 um: " + (bip[2021] - bip[2015]).toFixed(1) + " BILLIONEN US DOLLAR gestiegen.");
+        // console.log("Der BIP von Spanien ist seit 2015 um: " + (bip[2021] - bip[2015]).toFixed(1) + " BILLIONEN US DOLLAR gestiegen.");
     });
 
     init();
