@@ -1,0 +1,72 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+h1 { 
+    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    font-size: 200;
+    margin: auto;
+
+}
+
+body {
+    background-color:#000000;
+    text-align: center;
+}
+
+.all {
+    width: 150px;
+    height: 150px;
+    margin: 4px 2px;
+    border-width: 1px;
+    border-radius: 5%;
+    display: inline-block;
+}
+
+.drum {
+    background-image: linear-gradient(#7d90cc, #0630ad)
+}
+
+.notes {
+    background-image: linear-gradient( #b97ab0,#94047e)
+}
+
+.laugh {
+    background-image: linear-gradient( #d6a161,#af6306);
+}
+
+.all:hover {
+    opacity: 0.5;
+}
+
+.fas:hover {
+    opacity: 0.5;
+}
+
+.fa-play {
+    color: #ffffff;
+    font-size: 70px;
+    margin: 5px;
+}
+
+.fa-retweet {
+    color: #09ff00;
+    font-size: 70px;
+    margin: 5px;
+}
+
+.fa-trash-alt {
+    color: #ff0000;
+    font-size: 70px;
+    margin: 5px;
+}
+
+
+.fa-pause {
+    color: #ffffff;
+    font-size: 70px;
+    margin: 5px;
+}
