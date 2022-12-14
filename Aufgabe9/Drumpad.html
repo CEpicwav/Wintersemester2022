@@ -5,40 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drumpad</title>
-    <link rel="stylesheet" href="css/styles.css" >
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <script src="./main.js" defer></script>
 </head>
 <body>
-    
-    
-    <div class="container">
-        <h1>Drum Pad</h1>
-        <div class="box">
-            <button class="a"></button>
-            <button class="b"></button>
-            <button class="c"></button>
-            <br>
-            <button class="d"></button>
-            <button class="e"></button>
-            <button class="f"></button>
-            <br>
-            <button class="g"></button>
-            <button class="h"></button>
-            <button class="i"></button>
-        </div>
-        <div class ="remix">
-            
-        </div>
-        
-
-
-        <div class="playbutton">
-            <i class ="fas fa-play"></i>
-            <i class ="fas fa-stop"></i>
-            <button id="remixb">Remix</button>
-        </div>
+<div class="pad">
+    <div class="row" id="row1">
+        <div class="all drum" id="hihat"></div>
+        <div class="all drum" id="snare"></div>
+        <div class="all drum" id="kick"></div>
     </div>
-    
+
+    <div class="row" id="row2">
+        <div class="all notes" id="noteA"></div>
+        <div class="all notes" id="noteB"></div>
+        <div class="all notes" id="noteC"></div>
+    </div>
+
+    <div class="row" id="row3">
+        <div class="all notes" id="noteD"></div>
+        <div class="all laugther" id="laughter1"></div>
+        <div class="all laugther" id="laughter2"></div>
+    </div>
+</div>
+    <div id="button"> 
+        <i class="fas fa-play" id="play"></i>
+        <i class="fas fa-retweet" id="remix"></i>
+        <i class="fas fa-trash" id="delete"></i>
+    </div>
 </body>
 </html>
