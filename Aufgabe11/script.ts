@@ -6,15 +6,15 @@ interface todo{
 };
 
 let todos: todo [] = [
-    { text: "Lorem",
+    { text: "Beispiel 1",
     checked: true,
 },
 {
-    text: "Ipsum",
+    text: "Beispiel 2",
     checked: false,
 },
 {
-    text: "Dolor",
+    text: "Beispiel 3",
     checked: false,
 },
 ]

@@ -32,6 +32,21 @@ window.addEventListener("load", function(): void {
         check.className = "far fa-circle";
         trash.className = "fas fa-trash";
 
+        window.addEventListener("load", function(): void {
+
+
+    inputDOMElement = document.querySelector("#inputTodo");
+    addButtonDOMElement = document.querySelector("#addButton");
+    todosDOMElement = document.querySelector("#todos");
+    counterDOMElement = document.querySelector("#counter");
+
+
+    addButtonDOMElement.addEventListener("click", addTodo);
+
+
+    drawListToDOM();
+});
+
         
         check.addEventListener("click", erledigteToDos);
        
