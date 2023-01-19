@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lernapp</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<h1>Endabgabe EIA - Lernapp</h1>
+
+<p>Wählen Sie ein Thema aus:</p>
+
+<select id="topic-selector">
+  <option value="html">HTML</option>
+  <option value="css">CSS</option>
+  <option value="typescript">TypeScript</option>
+</select>
+
+<br><br>
+
+<div id="score">Score: 0</div>
+<div class="score-container">
+  <div class="score-bar"></div>
+  <div id="score"></div>
+</div>
+
+<h2 id="question"></h2>
+
+<input type="text" id="answer-input">
+<button onclick="checkAnswer(document.getElementById('answer-input').value)">Antworten</button>
+
+<script src="questions.js"></script>
+
+
+<script>
+  const topicSelector = document.getElementById("topic-selector");
+  topicSelector.addEventListener("change", function() {
+    currentQuestion = getQuestion(topicSelector.value);
+    if (currentQuestion) {
+      displayQuestion(currentQuestion);
+    } else {
+      alert("Es gibt keine Fragen zu diesem Thema.");
+    }
+  });
+</script>
+
+
+<footer>
+  <strong>
+      <div class="container">
+          <table class="table">
+              <tr>
+                  <td>Leon Dorner</td>
+                  <td>273072</td>
+              </div>
+  </strong>
+</footer>
+
+</body>
+</html>
+
+
+
+
+
