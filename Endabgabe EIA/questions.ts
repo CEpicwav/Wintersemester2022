@@ -38,6 +38,7 @@ function displayQuestion(question: Question) {
   }
 }
 
+
 function checkAnswer(answer: string) {
   if (!currentQuestion) {
     return;
@@ -47,17 +48,15 @@ function checkAnswer(answer: string) {
     alert(`Richtig! Ihr aktueller Score ist ${score}`);
     updateScore();
     currentQuestion = getQuestion(currentQuestion.topic);
-    if (currentQuestion) {
-      displayQuestion(currentQuestion);
-    } else {
-      alert("Sie haben alle Fragen dieses Themas beantwortet!");
-    }
+
+    
   } else {
     score = 0;
     alert("Falsch. Ihr Score wurde zurückgesetzt.");
     updateScore();
   }
 }
+
 
 function updateScore() {
   const scoreElement = document.getElementById("score");

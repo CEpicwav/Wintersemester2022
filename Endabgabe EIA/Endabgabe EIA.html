@@ -4,8 +4,9 @@
   <title>Lernapp</title>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
 
+<body>
+<div class="complete">
 <h1>Endabgabe EIA - Lernapp</h1>
 
 <p>Wählen Sie ein Thema aus:</p>
@@ -29,20 +30,6 @@
 <input type="text" id="answer-input">
 <button onclick="checkAnswer(document.getElementById('answer-input').value)">Antworten</button>
 
-<script src="questions.js"></script>
-
-
-<script>
-  const topicSelector = document.getElementById("topic-selector");
-  topicSelector.addEventListener("change", function() {
-    currentQuestion = getQuestion(topicSelector.value);
-    if (currentQuestion) {
-      displayQuestion(currentQuestion);
-    } else {
-      alert("Es gibt keine Fragen zu diesem Thema.");
-    }
-  });
-</script>
 
 
 <footer>
@@ -56,7 +43,7 @@
   </strong>
 </footer>
 
-</body>
+</div>
 </html>
 
 

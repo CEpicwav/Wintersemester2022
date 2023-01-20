@@ -50,12 +50,6 @@ function checkAnswer(answer) {
         alert(`Richtig! Ihr aktueller Score ist ${score}`);
         updateScore();
         currentQuestion = getQuestion(currentQuestion.topic);
-        if (currentQuestion) {
-            displayQuestion(currentQuestion);
-        }
-        else {
-            alert("Sie haben alle Fragen dieses Themas beantwortet!");
-        }
     }
     else {
         score = 0;

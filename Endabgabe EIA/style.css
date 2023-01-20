@@ -1,4 +1,16 @@
+.complete {
+
+  justify-content: center;
+//display: flex: ;
+
+ 
+
+
+}
+
 body {
+  
+  
     background-color: #97a7db;
     font-family: Arial, sans-serif;
     width: 375px;
@@ -30,7 +42,7 @@ body {
   
 
     footer {
-        background-color: #eaeaea;
+        background-color: #ffffff50;
         font-size: 12pt;
         font-family: Arial, sans-serif;
         position: absolute;
@@ -38,7 +50,8 @@ body {
         width: 375px; 
         height: 25px;
         font-weight: bold;
-        text-align: center;
+      
+      
     }
     
     #score {
