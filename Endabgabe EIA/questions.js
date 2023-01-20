@@ -27,6 +27,7 @@ const questions = [
 ];
 let score = 0;
 let currentQuestion = null;
+const scoreBar = document + .getElementById(score);
 function getQuestion(topic) {
     const possibleQuestions = questions.filter(q => q.topic === topic);
     if (possibleQuestions.length === 0) {
@@ -46,25 +47,47 @@ function checkAnswer(answer) {
         return;
     }
     if (answer === currentQuestion.answer) {
-        score++;
+        score = score + 20;
         alert(`Richtig! Ihr aktueller Score ist ${score}`);
         updateScore();
         currentQuestion = getQuestion(currentQuestion.topic);
-    }
-    else {
+        displayQuestion(currentQuestion);
+        let form = document.getElementById('myform');
+        /**form.onreset() = function() {
+          document.getElementById("answer-input").innerHTML = "";
+        }  } else {
         score = 0;
         alert("Falsch. Ihr Score wurde zurückgesetzt.");
         updateScore();
+      }**/
     }
-}
-function updateScore() {
-    const scoreElement = document.getElementById("score");
-    if (scoreElement) {
-        scoreElement.innerText = `${score}`;
+    function changeQuestion(_type) {
+        let question;
+        switch (_type) {
+            case "css":
+                question = getQuestion("css");
+                break;
+            case "html":
+                question = getQuestion("html");
+                break;
+            case "typescript":
+                question = getQuestion("typescript");
+                break;
+        }
+        console.log("here we go");
+        currentQuestion = question;
+        document.getElementById("question").innerHTML = question.question;
+        //document.getElementById("answer-input").reset();
     }
-    const scoreBar = document.querySelector(".score-bar");
-    if (scoreBar) {
-        scoreBar.style.width = `${score}%`;
+    function updateScore() {
+        const scoreElement = document.getElementById("score");
+        if (scoreElement) {
+            scoreElement.innerText = `${score / 20}/5`;
+        }
+        const scoreBar = document.querySelector(".score-bar");
+        if (scoreBar) {
+            scoreBar.style.width = `${score}%`;
+        }
     }
 }
 //# sourceMappingURL=questions.js.map
