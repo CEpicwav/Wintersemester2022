@@ -1,44 +1,53 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
+<html>
+
 <head>
-<title>Lernapp</title>
-<link rel="stylesheet" type="text/css" href="style.css">
-<script src="questions.js"></script>
+    <title>Lernapp</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="questions.js" defer></script>
 </head>
 
 <body>
-  <div class="container">
-    <h1>Endabgabe EIA - Lernapp</h1>
+    <div class="container">
+        <h1>Endabgabe EIA - Lernapp</h1>
 
-    <p>Wählen Sie ein Thema aus:</p>
+        <p>Wählen Sie ein Thema aus:</p>
 
-    <select id="topic-selector" onchange="changeQuestion(value)">
-      <option value="html">HTML</option>
-      <option value="css">CSS</option>
-      <option value="typescript">TypeScript</option>
-    </select>
-    <div class="score-container">
-      <div class="score-bar"></div>
-      <div id="score">Score: 0</div>
-    </div>
+        <select id="topic-selector">
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <option value="typescript">TypeScript</option>
+          </select>
+          <div class="score-container">
+            <div class="score-bar"></div>
+            <div id="score">Score: 0</div>
+          </div>
+          
+          <h2 id="question"></h2>
+          <form method="post" action="/form/submit"></form>
+            <h4>Wähle eine Antwort</h4>
+            <select name="subject[]" multiple size="3"  class="select-options">
+              <option value="english">ENGLISH</option>
+              <option value="maths">MATHS</option>
+              <option value="computer">COMPUTER</option>
+            </select>
+          </form>
+          <div id="myform">
+            <input type="reset" value="Reset" onclick="resetTest()">
+            <button id="answer" onclick="checkAnswer(document.getElementById('answer-input').value)">Antworten</button>
+            <div id="definition-container">
+              <p id="definition"></p>
+              <div id="button-container"></div>
+            </div>
+          </div>
+          </body>
 
-    <h2 id="question"></h2>
-<form id="myform">
-    <input type="reset" value="Reset"> 
-    <input type="label" id="answer-input">
-    <button id="answer" onclick="checkAnswer(document.getElementById('answer-input').value)">Antworten</button>
-</form>
-
-  </div>
-
-
-
-  <footer>
-      <table class="table">
-        <tr>
-          <td>Leon Dorner</td>
-          <td>273072</td>
-  </footer>
-</body>
+    <footer>
+        <table class="table">
+            <tr>
+                <td>Leon Dorner |</td>
+                <td>| 273072</td>
+        </footer>
+    </body>
 
 </html>

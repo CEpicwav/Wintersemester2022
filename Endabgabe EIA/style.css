@@ -12,6 +12,27 @@ body {
 
 }
 
+table {
+  display: flex;
+  font-family: Arial, sans-serif;
+  border-color: #eaeaea;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.select-options {
+  width: 375px;
+  height: 80px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 14px;
+  font-family: Arial, sans-serif; 
+}
+
+
+
 .container {
   display: flex;
   flex-direction: column;
@@ -75,7 +96,7 @@ align-self: center;
   height: 25px;
   background-color: #4CAF50;
   transition: width 0.5s ease-in-out;
-  border: solid 1px rgb(255, 255, 255);
-  border-radius: 2px;
+  border: solid 1px rgb(161, 224, 172);
+  border-radius: 5px;
   padding: 2px;
 }
