@@ -2,18 +2,14 @@ body {
   margin: 0;
   height: 100vh;
   display: flex;
-  background-color: #ffffff;
+  background-color: #97a7db;
   font-family: Arial, sans-serif;
   text-align: center;
-  border-color: #818181;
+  border-color: #eaeaea;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
 
-}
-
-header {
-background-color: #c2c2c2;
 }
 
 h1 {
@@ -33,7 +29,7 @@ table {
   width: 375px;
   height: 80px;
   border: 1px solid #ccc;
-  border-radius: 2px;
+  border-radius: 5px;
   padding: 10px;
   font-size: 14px;
   font-family: Arial, sans-serif; 
@@ -42,9 +38,7 @@ table {
 
 
 .container {
-  background-color: #d4d4d4;
   display: grid;
-  font-family: Arial, sans-serif;
   flex-direction: column;
   width: 375px;
   height: 667px;
@@ -104,6 +98,6 @@ align-self: center;
   background-color: #4CAF50;
   transition: width 0.5s ease-in-out;
   border: solid 1px rgb(161, 224, 172);
-  border-radius: 2px;
+  border-radius: 5px;
   padding: 2px;
 }

@@ -12,7 +12,6 @@ class Question {
         this.choices = choices;
     }
 }
-let questionIndex = 0;
 const htmlQuestions = [
     new Question("html", "Wie kann man einen Link in HTML erstellen?", "&lt;a&gt;", "<p>Das hier ist eine Erklärung mit einem Link: <a href='https://de.w3docs.com/html-lernen/html-links.html' target='_blank'>Lösung</a></p>", [`<a>`, `<link>`, `<img>`]),
     new Question("html", "Wie kann man ein Bild in HTML einfügen?", "&lt;img&gt;", "<p>Das hier ist eine Erklärung mit einem Link: <a href='https://www.computerbild.de/artikel/cb-Tipps-Internet-html-bilder-einfuegen-30918285.html' target='_blank'>Lösung</a></p>", [`<a>`, `<img>`, `<navi>`]),
@@ -34,12 +33,29 @@ const typescriptQuestions = [
     new Question("typescript", "Wie kann man eine Klasse in TypeScript erstellen?", "&lt;class classname {}&gt;", "<p>Das hier ist eine Erklärung mit einem Link: <a href='https://www.youtube.com/watch?v=TitI78lrqPs' target='_blank'>Lösung</a></p>", [`<interface interfacename {}>`, `<var = globalen Scope, let und const = lokalen Scope>`, `<class classname {}>`]),
     new Question("typescript", "Wie kann man einen Fehler in TypeScript abfangen?", "&lt;try {} catch(error) {}&gt;", "<p>Das hier ist eine Erklärung mit einem Link: <a href='https://entwickler.de/javascript/error-handling-in-javascript' target='_blank'>Lösung</a></p>", [`<interface interfacename {}>`, `<try {} catch(error) {}>`, `<try {} catch(error) {}>`]),
 ];
+const randomQuestions = [
+    new Question("random", "Wie kann man einen Link in HTML erstellen?", "&lt;a&gt;", "<p>Das hier ist eine Erklärung mit einem Link: <a href='https://de.w3docs.com/html-lernen/html-links.html' target='_blank'>Lösung</a></p>", [`<a>`, `<link>`, `<img>`]),
+    new Question("random", "Wie kann man ein Bild in HTML einfügen?", "&lt;img&gt;", "<p>Das hier ist eine Erklärung mit einem Link: <a href='https://www.computerbild.de/artikel/cb-Tipps-Internet-html-bilder-einfuegen-30918285.html' target='_blank'>Lösung</a></p>", [`<a>`, `<img>`, `<navi>`]),
+    new Question("random", "Wie kann man eine Liste in HTML erstellen?", "&lt;ul&gt;", "<p>Das hier ist eine Erklärung mit einem Link: <a href='https://praxistipps.chip.de/html-aufzaehlungen-und-listen-einfuegen_46540#:~:text=Aufzählungspunkte%20in%20HTML%20einfügen,Tag%20(s.html' target='_blank'>Lösung</a></p>", [`<ul>`, `<form>`, `<a>`]),
+    new Question("random", "Wie kann man eine Tabelle in HTML erstellen?", "&lt;table&gt;", "<p>Das hier ist eine Erklärung mit einem Link: <a href='https://wiki.selfhtml.org/wiki/HTML/Tabellen/Aufbau_einer_Tabelle#:~:text=leitet%20eine%20Tabelle%20ein,Tag%20notiert.html' target='_blank'>Lösung</a></p>", [`<a>`, `<link>`, `<table>`]),
+    new Question("random", "Wie kann man ein Formular in HTML erstellen?", "&lt;form&gt;", "<p>Das hier ist eine Erklärung mit einem Link: <a href='https://www.html-seminar.de/formulare.html' target='_blank'>Lösung</a></p>", [`<ul>`, `<form>`, `<navi>`]),
+    new Question("random", "Wie kann man einen Hintergrundfarbe eines Elements in CSS festlegen?", "&lt;background-color&gt;", "<p>Das hier ist eine Erklärung mit einem Link: <a href='https://wiki.selfhtml.org/wiki/CSS/Tutorials/Hintergrund/Gestaltung_mit_CSS#:~:text=background-color%5BBearbeiten%5D,Element%20eine%20Hintergrundfarbe%20zugewiesen%20werden.&text=In%20diesem%20Beispiel%20erhält%20der,hingegen%20ist%20keine%20Hintergrundfarbe%20festgelegt.html' target='_blank'>Lösung</a></p>", [`<background-color>`, `<font-family>`, `<text-align>`]),
+    new Question("random", "Wie kann man die Schriftart eines Elements in CSS festlegen?", "&lt;font-family&gt;", "<p>Das hier ist eine Erklärung mit einem Link: <a href='https://www.edv-lehrgang.de/css-font-family/#:~:text=Die%20Schriftart%20wird%20in%20CSS,mit%20einem%20Komma%20getrennt%20werden.html' target='_blank'>Lösung</a></p>", [`<background-color>`, `<font-family>`, `<text-align>`]),
+    new Question("random", "Wie kann man die Abstände eines Elements in CSS festlegen?", "&lt;margin&gt;", "<p>Das hier ist eine Erklärung mit einem Link: <a href='https://www.mediaevent.de/css/margin.html#:~:text=Das%20Boxmodell%20definiert%20CSS%20margin,den%20Abstand%20vom%20umfassenden%20Element.html' target='_blank'>Lösung</a></p>", [`<background-color>`, `<font-family>`, `<margin>`]),
+    new Question("random", "Wie kann man die Ausrichtung eines Elements in CSS festlegen?", "&lt;text-align&gt;", "<p>Das hier ist eine Erklärung mit einem Link: <a href='https://wiki.selfhtml.org/wiki/CSS/Tutorials/Ausrichtung/position' target='_blank'>Lösung</a></p>", [`<background-color>`, `<font-family>`, `<text-align>`]),
+    new Question("random", "Wie kann man die Auswahl von Elementen in CSS einschränken?", "&lt;class&gt;", "<p>Das hier ist eine Erklärung mit einem Link: <a href='https://www.mediaevent.de/css/css-selektor-kontextselektor.html' target='_blank'>Lösung</a></p>", [`<class>`, `<font-family>`, `<text-align>`]),
+    new Question("random", "Was ist der Unterschied zwischen var, let und const in TypeScript?", "&lt;var = globalen Scope, let und const = lokalen Scope&gt;", "<p>Das hier ist eine Erklärung mit einem Link: <a href='https://memucho.de/var-let-const-Sichtbarkeit-von-Variablen-in-Javasc/609#:~:text=Variablen%2FKonstanten%2C%20die%20mit%20let,sichtbar%2C%20wo%20sie%20deklariert%20werden.&text=Eine%20neue%20Zuweisung%20einer%20Variable,den%20Block%20der%20neuen%20Variable.' target='_blank'>Lösung</a></p>", [`<interface interfacename {}>`, `<var = globalen Scope, let und const = lokalen Scope>`, `<try {} catch(error) {}>`]),
+    new Question("random", "Wie kann man eine Funktion in TypeScript erstellen?", "&lt;function funktionsname() {}&gt;", "<p>Das hier ist eine Erklärung mit einem Link: <a href='https://runebook.dev/de/docs/typescript/functions' target='_blank'>Lösung</a></p>", [`<function funktionsname() >`, `<var = globalen Scope, let und const = lokalen Scope>`, `<try {} catch(error) {}>`]),
+    new Question("random", "Wie kann man ein Interface in TypeScript erstellen?", "&lt;interface interfacename {}&gt;", "<p>Das hier ist eine Erklärung mit einem Link: <a href='https://runebook.dev/de/docs/typescript/interfaces' target='_blank'>Lösung</a></p>", [`<interface interfacename {}>`, `<var = globalen Scope, let und const = lokalen Scope>`, `<try {} catch(error) {}>`]),
+    new Question("random", "Wie kann man eine Klasse in TypeScript erstellen?", "&lt;class classname {}&gt;", "<p>Das hier ist eine Erklärung mit einem Link: <a href='https://www.youtube.com/watch?v=TitI78lrqPs' target='_blank'>Lösung</a></p>", [`<interface interfacename {}>`, `<var = globalen Scope, let und const = lokalen Scope>`, `<class classname {}>`]),
+    new Question("random", "Wie kann man einen Fehler in TypeScript abfangen?", "&lt;try {} catch(error) {}&gt;", "<p>Das hier ist eine Erklärung mit einem Link: <a href='https://entwickler.de/javascript/error-handling-in-javascript' target='_blank'>Lösung</a></p>", [`<interface interfacename {}>`, `<try {} catch(error) {}>`, `<try {} catch(error) {}>`]),
+];
 const select = document.getElementById("select-options");
 //verbindung zu der HTML Datei
 const answerOptions = [
     document.createElement("option"),
     document.createElement("option"),
-    document.createElement("option")
+    document.createElement("option"),
 ];
 let score = 0; //speichert Punktestand
 let currentQuestion = null; //speichert die aktuelle Frage
@@ -75,14 +91,17 @@ function displayQuestion(question) {
 function getQuestion(topic) {
     let possibleQuestions;
     switch (topic) {
-        case "html":
-            possibleQuestions = htmlQuestions;
+        case "random":
+            possibleQuestions = randomQuestions;
             break;
         case "css":
             possibleQuestions = cssQuestions;
             break;
         case "typescript":
             possibleQuestions = typescriptQuestions;
+            break;
+        case "html":
+            possibleQuestions = htmlQuestions;
             break;
         default:
             possibleQuestions = htmlQuestions;
