@@ -3,48 +3,99 @@ class Question {
     question;
     answer;
     definition;
-    constructor(topic, question, answer, definition) {
+    choices;
+    constructor(topic, question, answer, definition, choices) {
         this.topic = topic;
         this.question = question;
         this.answer = answer;
         this.definition = definition;
+        this.choices = choices;
     }
 }
-const questions = [
-    new Question("html", "Wie kann man einen Link in HTML erstellen?", "<a>", "<p>Das hier ist eine Erklärung mit einem Link: <a href=`https://de.w3docs.com/html-lernen/html-links.html`>Lösung</a></p>"),
-    new Question("html", "Wie kann man ein Bild in HTML einfügen?", "<img>", "<p>Das hier ist eine Erklärung mit einem Link: <a href=`https://www.computerbild.de/artikel/cb-Tipps-Internet-html-bilder-einfuegen-30918285.html`</a></p>"),
-    new Question("html", "Wie kann man eine Liste in HTML erstellen?", "<ul> oder <ol>", "<p>Das hier ist eine Erklärung mit einem Link: <a href=`https://praxistipps.chip.de/html-aufzaehlungen-und-listen-einfuegen_46540#:~:text=Aufzählungspunkte%20in%20HTML%20einfügen,Tag%20(s.</a></p>"),
-    new Question("html", "Wie kann man eine Tabelle in HTML erstellen?", "<table>", "<p>Das hier ist eine Erklärung mit einem Link: <a href=https://wiki.selfhtml.org/wiki/HTML/Tabellen/Aufbau_einer_Tabelle#:~:text=leitet%20eine%20Tabelle%20ein,Tag%20notiert.</a></p>"),
-    new Question("html", "Wie kann man ein Formular in HTML erstellen?", "<form>", "<p>Das hier ist eine Erklärung mit einem Link: <a href=https://www.html-seminar.de/formulare.htm</a></p>"),
-    new Question("css", "Wie kann man einen Hintergrundfarbe eines Elements in CSS festlegen?", "background-color", "<p>Das hier ist eine Erklärung mit einem Link: <a href=https://wiki.selfhtml.org/wiki/CSS/Tutorials/Hintergrund/Gestaltung_mit_CSS#:~:text=background-color%5BBearbeiten%5D,Element%20eine%20Hintergrundfarbe%20zugewiesen%20werden.&text=In%20diesem%20Beispiel%20erhält%20der,hingegen%20ist%20keine%20Hintergrundfarbe%20festgelegt.</a></p>"),
-    new Question("css", "Wie kann man die Schriftart eines Elements in CSS festlegen?", "font-family", "<p>Das hier ist eine Erklärung mit einem Link: <a href=https://www.edv-lehrgang.de/css-font-family/#:~:text=Die%20Schriftart%20wird%20in%20CSS,mit%20einem%20Komma%20getrennt%20werden.</a></p>"),
-    new Question("css", "Wie kann man die Abstände eines Elements in CSS festlegen?", "padding, margin", "<p>Das hier ist eine Erklärung mit einem Link: <a href=https://www.mediaevent.de/css/margin.html#:~:text=Das%20Boxmodell%20definiert%20CSS%20margin,den%20Abstand%20vom%20umfassenden%20Element.</a></p>"),
-    new Question("css", "Wie kann man die Ausrichtung eines Elements in CSS festlegen?", "text-align", "<p>Das hier ist eine Erklärung mit einem Link: <a href=https://wiki.selfhtml.org/wiki/CSS/Tutorials/Ausrichtung/position</a></p>"),
-    new Question("css", "Wie kann man die Auswahl von Elementen in CSS einschränken?", "Class, ID", "<p>Das hier ist eine Erklärung mit einem Link: <a href=https://www.mediaevent.de/css/css-selektor-kontextselektor.html</a></p>"),
-    new Question("typescript", "Was ist der Unterschied zwischen var, let und const in TypeScript?", "var hat einen globalen Scope, let und const haben einen lokalen Scope", "<p>Das hier ist eine Erklärung mit einem Link: <a href=https://memucho.de/var-let-const-Sichtbarkeit-von-Variablen-in-Javasc/609#:~:text=Variablen%2FKonstanten%2C%20die%20mit%20let,sichtbar%2C%20wo%20sie%20deklariert%20werden.&text=Eine%20neue%20Zuweisung%20einer%20Variable,den%20Block%20der%20neuen%20Variable.</a></p>"),
-    new Question("typescript", "Wie kann man eine Funktion in TypeScript erstellen?", "function funktionsname() {}", "<p>Das hier ist eine Erklärung mit einem Link: <a href=https://runebook.dev/de/docs/typescript/functions</a></p>"),
-    new Question("typescript", "Wie kann man ein Interface in TypeScript erstellen?", "interface interfacename {}", "<p>Das hier ist eine Erklärung mit einem Link: <a href=https://runebook.dev/de/docs/typescript/interfaces</a></p>"),
-    new Question("typescript", "Wie kann man eine Klasse in TypeScript erstellen?", "class classname {}", "<p>Das hier ist eine Erklärung mit einem Link: <a href=https://www.youtube.com/watch?v=TitI78lrqPs</a></p>"),
-    new Question("typescript", "Wie kann man einen Fehler in TypeScript abfangen?", "try {} catch(error) {}", "<p>Das hier ist eine Erklärung mit einem Link: <a href=https://entwickler.de/javascript/error-handling-in-javascript</a></p>"),
+let questionIndex = 0;
+const htmlQuestions = [
+    new Question("html", "Wie kann man einen Link in HTML erstellen?", "&lt;a&gt;", "<p>Das hier ist eine Erklärung mit einem Link: <a href='https://de.w3docs.com/html-lernen/html-links.html' target='_blank'>Lösung</a></p>", [`<a>`, `<link>`, `<img>`]),
+    new Question("html", "Wie kann man ein Bild in HTML einfügen?", "&lt;img&gt;", "<p>Das hier ist eine Erklärung mit einem Link: <a href='https://www.computerbild.de/artikel/cb-Tipps-Internet-html-bilder-einfuegen-30918285.html' target='_blank'>Lösung</a></p>", [`<a>`, `<img>`, `<navi>`]),
+    new Question("html", "Wie kann man eine Liste in HTML erstellen?", "&lt;ul&gt;", "<p>Das hier ist eine Erklärung mit einem Link: <a href='https://praxistipps.chip.de/html-aufzaehlungen-und-listen-einfuegen_46540#:~:text=Aufzählungspunkte%20in%20HTML%20einfügen,Tag%20(s.html' target='_blank'>Lösung</a></p>", [`<ul>`, `<form>`, `<a>`]),
+    new Question("html", "Wie kann man eine Tabelle in HTML erstellen?", "&lt;table&gt;", "<p>Das hier ist eine Erklärung mit einem Link: <a href='https://wiki.selfhtml.org/wiki/HTML/Tabellen/Aufbau_einer_Tabelle#:~:text=leitet%20eine%20Tabelle%20ein,Tag%20notiert.html' target='_blank'>Lösung</a></p>", [`<a>`, `<link>`, `<table>`]),
+    new Question("html", "Wie kann man ein Formular in HTML erstellen?", "&lt;form&gt;", "<p>Das hier ist eine Erklärung mit einem Link: <a href='https://www.html-seminar.de/formulare.html' target='_blank'>Lösung</a></p>", [`<ul>`, `<form>`, `<navi>`]),
 ];
-let score = 0;
-let currentQuestion = null;
+const cssQuestions = [
+    new Question("css", "Wie kann man einen Hintergrundfarbe eines Elements in CSS festlegen?", "&lt;background-color&gt;", "<p>Das hier ist eine Erklärung mit einem Link: <a href='https://wiki.selfhtml.org/wiki/CSS/Tutorials/Hintergrund/Gestaltung_mit_CSS#:~:text=background-color%5BBearbeiten%5D,Element%20eine%20Hintergrundfarbe%20zugewiesen%20werden.&text=In%20diesem%20Beispiel%20erhält%20der,hingegen%20ist%20keine%20Hintergrundfarbe%20festgelegt.html' target='_blank'>Lösung</a></p>", [`<background-color>`, `<font-family>`, `<text-align>`]),
+    new Question("css", "Wie kann man die Schriftart eines Elements in CSS festlegen?", "&lt;font-family&gt;", "<p>Das hier ist eine Erklärung mit einem Link: <a href='https://www.edv-lehrgang.de/css-font-family/#:~:text=Die%20Schriftart%20wird%20in%20CSS,mit%20einem%20Komma%20getrennt%20werden.html' target='_blank'>Lösung</a></p>", [`<background-color>`, `<font-family>`, `<text-align>`]),
+    new Question("css", "Wie kann man die Abstände eines Elements in CSS festlegen?", "&lt;margin&gt;", "<p>Das hier ist eine Erklärung mit einem Link: <a href='https://www.mediaevent.de/css/margin.html#:~:text=Das%20Boxmodell%20definiert%20CSS%20margin,den%20Abstand%20vom%20umfassenden%20Element.html' target='_blank'>Lösung</a></p>", [`<background-color>`, `<font-family>`, `<margin>`]),
+    new Question("css", "Wie kann man die Ausrichtung eines Elements in CSS festlegen?", "&lt;text-align&gt;", "<p>Das hier ist eine Erklärung mit einem Link: <a href='https://wiki.selfhtml.org/wiki/CSS/Tutorials/Ausrichtung/position' target='_blank'>Lösung</a></p>", [`<background-color>`, `<font-family>`, `<text-align>`]),
+    new Question("css", "Wie kann man die Auswahl von Elementen in CSS einschränken?", "&lt;class&gt;", "<p>Das hier ist eine Erklärung mit einem Link: <a href='https://www.mediaevent.de/css/css-selektor-kontextselektor.html' target='_blank'>Lösung</a></p>", [`<class>`, `<font-family>`, `<text-align>`]),
+];
+const typescriptQuestions = [
+    new Question("typescript", "Was ist der Unterschied zwischen var, let und const in TypeScript?", "&lt;var = globalen Scope, let und const = lokalen Scope&gt;", "<p>Das hier ist eine Erklärung mit einem Link: <a href='https://memucho.de/var-let-const-Sichtbarkeit-von-Variablen-in-Javasc/609#:~:text=Variablen%2FKonstanten%2C%20die%20mit%20let,sichtbar%2C%20wo%20sie%20deklariert%20werden.&text=Eine%20neue%20Zuweisung%20einer%20Variable,den%20Block%20der%20neuen%20Variable.' target='_blank'>Lösung</a></p>", [`<interface interfacename {}>`, `<var = globalen Scope, let und const = lokalen Scope>`, `<try {} catch(error) {}>`]),
+    new Question("typescript", "Wie kann man eine Funktion in TypeScript erstellen?", "&lt;function funktionsname() {}&gt;", "<p>Das hier ist eine Erklärung mit einem Link: <a href='https://runebook.dev/de/docs/typescript/functions' target='_blank'>Lösung</a></p>", [`<function funktionsname() >`, `<var = globalen Scope, let und const = lokalen Scope>`, `<try {} catch(error) {}>`]),
+    new Question("typescript", "Wie kann man ein Interface in TypeScript erstellen?", "&lt;interface interfacename {}&gt;", "<p>Das hier ist eine Erklärung mit einem Link: <a href='https://runebook.dev/de/docs/typescript/interfaces' target='_blank'>Lösung</a></p>", [`<interface interfacename {}>`, `<var = globalen Scope, let und const = lokalen Scope>`, `<try {} catch(error) {}>`]),
+    new Question("typescript", "Wie kann man eine Klasse in TypeScript erstellen?", "&lt;class classname {}&gt;", "<p>Das hier ist eine Erklärung mit einem Link: <a href='https://www.youtube.com/watch?v=TitI78lrqPs' target='_blank'>Lösung</a></p>", [`<interface interfacename {}>`, `<var = globalen Scope, let und const = lokalen Scope>`, `<class classname {}>`]),
+    new Question("typescript", "Wie kann man einen Fehler in TypeScript abfangen?", "&lt;try {} catch(error) {}&gt;", "<p>Das hier ist eine Erklärung mit einem Link: <a href='https://entwickler.de/javascript/error-handling-in-javascript' target='_blank'>Lösung</a></p>", [`<interface interfacename {}>`, `<try {} catch(error) {}>`, `<try {} catch(error) {}>`]),
+];
+const select = document.getElementById("select-options");
+//verbindung zu der HTML Datei
+const answerOptions = [
+    document.createElement("option"),
+    document.createElement("option"),
+    document.createElement("option")
+];
+let score = 0; //speichert Punktestand
+let currentQuestion = null; //speichert die aktuelle Frage
+let currentQuestionnaire = null;
 const scoreBar = document.getElementById("score");
+const definitionContainer = document.getElementById("definition-container");
+const answerButton = document.getElementById("answer");
+function displayQuestion(question) {
+    const questionElement = document.getElementById("question");
+    questionElement.innerText = question.question;
+    definitionContainer.style.display = "none";
+    answerButton.style.display = "block";
+    //zufällige Antwortmöglichkeiten (richtige Antwort wird nicht nochmal ausgegeben)
+    const randomQuestionIndex = Math.floor(Math.random() * answerOptions.length);
+    answerOptions[randomQuestionIndex].value = answerOptions[randomQuestionIndex].innerHTML = question.answer;
+    select.appendChild(answerOptions[randomQuestionIndex]);
+    for (let i = 0; i < answerOptions.length; i++) {
+        if (i == randomQuestionIndex) {
+        }
+        else {
+            let randomAnswerIndex = Math.floor(Math.random() * currentQuestionnaire.length);
+            if (randomAnswerIndex == randomQuestionIndex) {
+                randomAnswerIndex = randomAnswerIndex + 1;
+                if (randomAnswerIndex >= currentQuestionnaire.length) {
+                    randomAnswerIndex = 0;
+                }
+            }
+            answerOptions[i].value = answerOptions[i].innerHTML = currentQuestionnaire[randomAnswerIndex].answer;
+            select.appendChild(answerOptions[i]);
+        }
+    }
+}
 function getQuestion(topic) {
-    const possibleQuestions = questions.filter(q => q.topic === topic);
+    let possibleQuestions;
+    switch (topic) {
+        case "html":
+            possibleQuestions = htmlQuestions;
+            break;
+        case "css":
+            possibleQuestions = cssQuestions;
+            break;
+        case "typescript":
+            possibleQuestions = typescriptQuestions;
+            break;
+        default:
+            possibleQuestions = htmlQuestions;
+            break;
+    }
     if (possibleQuestions.length === 0) {
+        console.log("Es gibt keine Fragen zu diesem Thema mehr");
         return null;
     }
     const randomIndex = Math.floor(Math.random() * possibleQuestions.length);
-    return possibleQuestions[randomIndex];
-}
-function displayQuestion(question) {
-    document.getElementById("definition").innerHTML = "";
-    document.getElementById("button-container").innerHTML = "";
-    const questionElement = document.getElementById("question");
-    if (questionElement) {
-        questionElement.innerText = question.question;
-    }
+    currentQuestion = possibleQuestions[randomIndex];
+    currentQuestionnaire = possibleQuestions;
+    displayQuestion(possibleQuestions[randomIndex]);
 }
 function checkAnswer(answer) {
     if (!currentQuestion) {
@@ -53,41 +104,30 @@ function checkAnswer(answer) {
     if (answer === currentQuestion.answer) {
         score = score + 20;
         alert(`Richtig! Ihr aktueller Score ist ${score}`);
-        document.getElementById("definition").innerHTML = "";
-        updateScore();
-        currentQuestion = getQuestion(currentQuestion.topic);
-        displayQuestion(currentQuestion);
-        let form = document.getElementById('myform');
+        if (updateScore() == true) {
+            return;
+        }
+        ;
+        // löschen der schon richtig beantworteten Frage aus dem Fragenkatalog
+        removeQuestion(currentQuestionnaire, currentQuestion);
+        // Get the next Question
+        getQuestion(currentQuestion.topic);
     }
     else {
         alert(`Falsch! Die richtige Antwort ist ${currentQuestion.answer}`);
         document.getElementById("definition").innerHTML = currentQuestion.definition;
-        let goOnButton = document.createElement("button");
-        goOnButton.innerHTML = "Weiter";
-        goOnButton.onclick = function () {
-            currentQuestion = getQuestion(currentQuestion.topic);
-            displayQuestion(currentQuestion);
-        };
-        document.getElementById("button-container").appendChild(goOnButton);
+        definitionContainer.style.display = "block";
+        answerButton.style.display = "none";
     }
 }
-function changeQuestion(_type) {
-    let question;
-    switch (_type) {
-        case "css":
-            question = getQuestion("css");
-            break;
-        case "html":
-            question = getQuestion("html");
-            break;
-        case "typescript":
-            question = getQuestion("typescript");
-            break;
-    }
-    console.log("here we go");
-    currentQuestion = question;
-    document.getElementById("question").innerHTML = question.question;
+function removeQuestion(_array, _question) {
+    const index = _array.indexOf(_question);
+    _array.splice(index, 1);
 }
+/**
+ *
+ * @returns gibt true zuück, wenn man gewonnen hat und false, wenn man noch keine 5 Punkte erreicht hat
+ */
 function updateScore() {
     const scoreElement = document.getElementById("score");
     if (scoreElement) {
@@ -99,11 +139,13 @@ function updateScore() {
     }
     if (score == 100) {
         alert(`Sie haben gewonnen!`);
+        return true;
     }
+    return false;
 }
 function resetTest() {
     score = 0;
     updateScore();
 }
-changeQuestion("html");
+getQuestion("html");
 //# sourceMappingURL=questions.js.map

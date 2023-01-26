@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lernapp</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="questions.js" defer></script>
+</head>
+
+<body>
+
+    <div class="container">
+    <header>
+        <h1>Endabgabe EIA - Lernapp</h1>
+    </header>
+        <p>Wählen Sie ein Thema aus:</p>
+        <select id="topic-selector" onchange="getQuestion(value)">
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <option value="typescript">TypeScript</option>
+            <option value="random">Random</option>
+
+        </select>
+        <div class="score-container">
+            <div class="score-bar"></div>
+            <div id="score">Score: 0</div>
+        </div>
+
+        <h3 id="question"></h3>
+        <h4>Wähle eine Antwort</h4>
+        <select id="select-options" name="subject[]" multiple size="3" class="select-options">
+        </select>
+        <div id="myform">
+            <input type="reset" value="Reset" onclick="resetTest()">
+            <button id="answer"
+                onclick="checkAnswer(document.getElementById('select-options').value)">Antworten</button>
+            <div id="definition-container">
+                <p id="definition"></p>
+                <div id="button-container">
+                    <button onclick="getQuestion(currentQuestion.topic)">Weiter</button>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <table class="table">
+                <tr>
+                    <td>Leon Dorner |</td>
+                    <td>| 273072</td>
+                </tr>
+            </table>
+        </footer>
+    </div>
+</body>
+
+</html>

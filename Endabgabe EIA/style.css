@@ -2,14 +2,22 @@ body {
   margin: 0;
   height: 100vh;
   display: flex;
-  background-color: #97a7db;
+  background-color: #ffffff;
   font-family: Arial, sans-serif;
   text-align: center;
-  border-color: #eaeaea;
+  border-color: #818181;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
 
+}
+
+header {
+background-color: #c2c2c2;
+}
+
+h1 {
+  font-size: 1.5em;
 }
 
 table {
@@ -25,7 +33,7 @@ table {
   width: 375px;
   height: 80px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 2px;
   padding: 10px;
   font-size: 14px;
   font-family: Arial, sans-serif; 
@@ -34,7 +42,9 @@ table {
 
 
 .container {
-  display: flex;
+  background-color: #d4d4d4;
+  display: grid;
+  font-family: Arial, sans-serif;
   flex-direction: column;
   width: 375px;
   height: 667px;
@@ -66,7 +76,6 @@ button {
 
 footer {
   position: relative;
-  position: flex;
   align-self: flex-end;
   background-color: #ffffff50;
   font-size: 12pt;
@@ -75,8 +84,6 @@ footer {
   width: 375px;
   height: 25px;
   font-weight: bold;
-
-
 }
 
 #score {
@@ -97,6 +104,6 @@ align-self: center;
   background-color: #4CAF50;
   transition: width 0.5s ease-in-out;
   border: solid 1px rgb(161, 224, 172);
-  border-radius: 5px;
+  border-radius: 2px;
   padding: 2px;
 }
