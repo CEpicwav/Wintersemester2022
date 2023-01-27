@@ -1,6 +1,5 @@
 body {
-  margin: 0;
-  height: 100vh;
+
   display: flex;
   background-color: #97a7db;
   font-family: Arial, sans-serif;
@@ -32,7 +31,8 @@ table {
   border-radius: 5px;
   padding: 10px;
   font-size: 14px;
-  font-family: Arial, sans-serif; 
+  font-family: Arial, sans-serif;
+  overflow: hidden;
 }
 
 
@@ -42,7 +42,8 @@ table {
   flex-direction: column;
   width: 375px;
   height: 667px;
-  flex-direction: column;;
+  flex-direction: column;
+  ;
 }
 
 select,
@@ -81,7 +82,7 @@ footer {
 }
 
 #score {
-align-self: center;
+  align-self: center;
 }
 
 .score-container {
